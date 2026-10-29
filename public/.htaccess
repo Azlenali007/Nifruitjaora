@@ -1,16 +1,25 @@
+# ----------------------------------------------------------------------
+# N.A Fresh Fruits & Coconuts - Public Directory Apache Configuration
+# ----------------------------------------------------------------------
+
+# Disable Directory Browsing
+Options -Indexes -MultiViews
+
+# Default Index
+DirectoryIndex index.php
+
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^ index.php [L]
-</IfModule>
+    RewriteBase /
 
-# Prevent directory listings
-Options -Indexes
+    # Block hidden files and dotfiles
+    RewriteRule (^\.|/\.) - [F,L]
 
-# Security Headers
-<IfModule mod_headers.c>
-    Header set X-Content-Type-Options "nosniff"
-    Header set X-Frame-Options "SAMEORIGIN"
-    Header set X-XSS-Protection "1; mode=block"
+    # Send requests to existing files and directories directly
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Route all other URLs to index.php
+    RewriteRule ^ index.php [QSA,L]
 </IfModule>

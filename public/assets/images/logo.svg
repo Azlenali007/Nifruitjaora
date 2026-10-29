@@ -1,27 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 60" width="310" height="60" fill="none">
-  <!-- Brand text N.A with leaf -->
-  <g>
-    <!-- Letter N -->
-    <text x="2" y="40" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="44" font-weight="900" fill="#ffffff" letter-spacing="-1">N</text>
-    
-    <!-- Period with Fresh Green Sprouting Leaf Accent -->
-    <circle cx="43" cy="38" r="3.5" fill="#22c55e" />
-    <path d="M43 32 C43 23, 53 23, 53 30 C53 33, 47 34, 43 32 Z" fill="#22c55e" />
-    <path d="M44 31 C47 27, 51 27, 52 30" stroke="#16a34a" stroke-width="0.8" stroke-linecap="round" fill="none" />
-    
-    <!-- Letter A -->
-    <text x="51" y="40" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="44" font-weight="900" fill="#ffffff" letter-spacing="-1">A</text>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" width="320" height="64" fill="none">
+  <!-- Brand Emblem Background Badge -->
+  <rect x="2" y="4" width="56" height="56" rx="16" fill="url(#brandGrad)" />
+  
+  <defs>
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#34d399" />
+    </linearGradient>
+  </defs>
 
-  <!-- Divider accent dot -->
-  <circle cx="97" cy="26" r="1.5" fill="#34d399" opacity="0.6" />
+  <!-- N.A Monogram inside Emblem -->
+  <text x="10" y="44" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="28" font-weight="900" fill="#ffffff" letter-spacing="-1">N</text>
+  <circle cx="34" cy="42" r="3" fill="#06180e" />
+  <path d="M34 36 C34 30, 41 30, 41 35 C41 37, 37 38, 34 36 Z" fill="#06180e" />
+  <text x="38" y="44" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="28" font-weight="900" fill="#ffffff" letter-spacing="-1">A</text>
 
-  <!-- Fresh Fruits & Coconuts stacked subtitle -->
+  <!-- Stacked Brand Title -->
   <g fill="#ffffff">
-    <text x="106" y="24" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="16" font-weight="800" letter-spacing="0.2">Fresh Fruits</text>
-    <text x="106" y="40" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="16" font-weight="800" letter-spacing="0.2">&amp; Coconuts</text>
+    <text x="70" y="27" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="16" font-weight="900" letter-spacing="0.3">Fresh Fruits</text>
+    <text x="70" y="43" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="15" font-weight="800" fill="#34d399" letter-spacing="0.3">&amp; Coconuts</text>
   </g>
 
   <!-- Tagline FRESH • HEALTHY • NATURAL -->
-  <text x="4" y="55" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="8" font-weight="700" fill="#6ee7b7" letter-spacing="3.2">FRESH • HEALTHY • NATURAL</text>
+  <text x="70" y="56" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="8" font-weight="800" fill="#a7f3d0" letter-spacing="2.5">FRESH • HEALTHY • NATURAL</text>
 </svg>

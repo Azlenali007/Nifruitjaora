@@ -38,25 +38,43 @@
     </div>
     <?php endif; ?>
 
-    <!-- Navigation Header (Modern, High Contrast, Matches Visual Reference) -->
-    <header class="sticky top-0 z-40 bg-brand-950/95 backdrop-blur-md border-b border-brand-800/50 text-white transition-all shadow-lg">
+    <!-- Navigation Header (Solid Background, Guaranteed 100% Brand Visibility) -->
+    <header class="sticky top-0 z-40 bg-[#06180e] border-b border-emerald-900/60 text-white transition-all shadow-xl">
         <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-18 sm:h-20">
                 
-                <!-- Brand Logo (High Visibility, Never Clipped or Overlapped) -->
-                <a href="/" class="flex items-center gap-2 group focus:outline-none shrink-0 py-1" aria-label="N.A Fresh Fruits & Coconuts">
-                    <img src="/assets/images/logo.svg" 
-                         alt="N.A Fresh Fruits & Coconuts" 
-                         class="h-9 sm:h-11 md:h-12 w-auto max-w-[190px] xs:max-w-[220px] sm:max-w-[270px] md:max-w-none object-contain transition-transform group-hover:scale-102 filter drop-shadow">
+                <!-- Brand Logo & Name (Crisp Vector & Typography Lockup - Always 100% Visible) -->
+                <a href="/" class="flex items-center gap-2.5 sm:gap-3.5 group focus:outline-none shrink-0 py-1" aria-label="N.A Fresh Fruits & Coconuts">
+                    <!-- Emblem: N.A with natural green leaf accent -->
+                    <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-emerald-600 to-emerald-400 flex items-center justify-center shadow-lg shadow-emerald-500/30 text-white shrink-0 group-hover:scale-105 transition-transform border border-emerald-300/30">
+                        <span class="text-lg sm:text-xl font-black tracking-tighter select-none font-sans flex items-center">
+                            N<span class="text-emerald-950 font-black">.</span>A
+                        </span>
+                    </div>
+
+                    <!-- Typographic Brand Stack -->
+                    <div class="flex flex-col text-left justify-center">
+                        <div class="flex items-center leading-none">
+                            <span class="text-base sm:text-lg md:text-xl font-black text-white tracking-tight leading-none group-hover:text-emerald-300 transition-colors">
+                                N.A <span class="font-extrabold text-white">Fresh Fruits</span>
+                            </span>
+                        </div>
+                        <span class="text-xs sm:text-sm font-bold text-emerald-400 tracking-tight leading-tight mt-0.5">
+                            &amp; Coconuts
+                        </span>
+                        <span class="text-[8px] sm:text-[9.5px] font-extrabold text-emerald-200/90 tracking-[0.2em] sm:tracking-[0.25em] uppercase leading-none mt-1">
+                            Fresh &bull; Healthy &bull; Natural
+                        </span>
+                    </div>
                 </a>
 
                 <!-- Desktop Navigation Links (Modern Spacious Treatment) -->
                 <nav class="hidden md:flex items-center gap-1 lg:gap-2 text-sm font-semibold tracking-wide">
-                    <a href="/" class="px-3.5 py-2 rounded-full text-white hover:text-brand-300 hover:bg-brand-900/60 transition-all">Home</a>
-                    <a href="/products" class="px-3.5 py-2 rounded-full text-slate-200 hover:text-brand-300 hover:bg-brand-900/60 transition-all">Coconut Catalogue</a>
-                    <a href="/track" class="px-3.5 py-2 rounded-full text-slate-200 hover:text-brand-300 hover:bg-brand-900/60 transition-all">Track Order</a>
+                    <a href="/" class="px-3.5 py-2 rounded-full text-white font-bold hover:text-emerald-300 hover:bg-emerald-900/60 transition-all">Home</a>
+                    <a href="/products" class="px-3.5 py-2 rounded-full text-slate-100 font-semibold hover:text-emerald-300 hover:bg-emerald-900/60 transition-all">Coconut Catalogue</a>
+                    <a href="/track" class="px-3.5 py-2 rounded-full text-slate-100 font-semibold hover:text-emerald-300 hover:bg-emerald-900/60 transition-all">Track Order</a>
                     <?php if (auth()): ?>
-                        <a href="/my-orders" class="px-3.5 py-2 rounded-full text-slate-200 hover:text-brand-300 hover:bg-brand-900/60 transition-all">My Orders</a>
+                        <a href="/my-orders" class="px-3.5 py-2 rounded-full text-slate-100 font-semibold hover:text-emerald-300 hover:bg-emerald-900/60 transition-all">My Orders</a>
                     <?php endif; ?>
                 </nav>
 

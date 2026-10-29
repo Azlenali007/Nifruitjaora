@@ -40,9 +40,9 @@
                         </div>
 
                         <!-- Top green accent notch -->
-                        <div class="w-6 h-1 bg-brand-500 rounded-full mb-1"></div>
-                        <h4 class="text-[11px] sm:text-xs font-bold text-slate-800 leading-tight mb-1 line-clamp-2" x-text="prevProduct.name"></h4>
-                        <div class="text-brand-600 font-extrabold text-sm sm:text-base mb-2 sm:mb-3" x-text="'₹' + Math.round(prevProduct.price)"></div>
+                        <div class="w-6 h-1 bg-emerald-500 rounded-full mb-1"></div>
+                        <h4 class="text-[11px] sm:text-xs font-black text-slate-900 leading-tight mb-1 line-clamp-2" x-text="prevProduct.name"></h4>
+                        <div class="text-emerald-700 font-black text-sm sm:text-base mb-2 sm:mb-3" x-text="'₹' + Math.round(prevProduct.price)"></div>
 
                         <!-- Circular Quick Cart Button -->
                         <button @click.stop="addQuickProduct(prevProduct.id)" type="button" aria-label="Add to cart"
@@ -89,31 +89,31 @@
                         </div>
 
                         <!-- Product Name -->
-                        <h2 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight pt-2" x-text="currentProduct.name">
+                        <h2 class="text-xl sm:text-2xl md:text-3xl font-black text-slate-900 tracking-tight pt-2" x-text="currentProduct.name">
                             Fresh Nariyal Pani
                         </h2>
 
-                        <!-- Natural Tagline / Subtitle -->
-                        <p class="text-xs sm:text-sm font-semibold text-slate-400 mt-1" x-text="currentProduct.short_description || '100% Natural | No Added Sugar | Fresh & Healthy'">
+                        <!-- Natural Tagline / Subtitle (High Contrast) -->
+                        <p class="text-xs sm:text-sm font-bold text-slate-700 mt-1" x-text="currentProduct.short_description || '100% Natural | No Added Sugar | Fresh & Healthy'">
                             100% Natural | No Added Sugar | Fresh &amp; Healthy
                         </p>
 
                         <!-- Price -->
                         <div class="mt-2 sm:mt-3">
-                            <span class="text-3xl sm:text-4xl font-extrabold text-brand-600 tracking-tight" x-text="'₹' + Math.round(currentProduct.price)">
+                            <span class="text-3xl sm:text-4xl font-black text-emerald-700 tracking-tight" x-text="'₹' + Math.round(currentProduct.price)">
                                 ₹40
                             </span>
                         </div>
 
                         <!-- Quantity Selector Pill [- 1 +] -->
-                        <div class="inline-flex items-center justify-center bg-slate-50 border border-slate-200 rounded-full py-1 px-4 mt-3 sm:mt-4 shadow-inner">
+                        <div class="inline-flex items-center justify-center bg-slate-100 border border-slate-300 rounded-full py-1.5 px-4 mt-3 sm:mt-4 shadow-inner">
                             <button @click="decrementQty()" type="button" aria-label="Decrease quantity"
-                                    class="w-7 h-7 flex items-center justify-center text-slate-600 hover:text-brand-600 font-extrabold text-lg select-none">
+                                    class="w-7 h-7 flex items-center justify-center text-slate-800 hover:text-emerald-700 font-black text-lg select-none">
                                 &minus;
                             </button>
-                            <span class="w-8 text-center font-extrabold text-base text-slate-800" x-text="quantity">1</span>
+                            <span class="w-8 text-center font-black text-base text-slate-900" x-text="quantity">1</span>
                             <button @click="incrementQty()" type="button" aria-label="Increase quantity"
-                                    class="w-7 h-7 flex items-center justify-center text-slate-600 hover:text-brand-600 font-extrabold text-lg select-none">
+                                    class="w-7 h-7 flex items-center justify-center text-slate-800 hover:text-emerald-700 font-black text-lg select-none">
                                 &#43;
                             </button>
                         </div>
@@ -121,12 +121,12 @@
                         <!-- Action Buttons: Order Now & Add to Cart -->
                         <div class="mt-4 sm:mt-5 flex items-center gap-3">
                             <button @click="addActiveToCart(true)" type="button"
-                                    class="flex-1 py-3.5 sm:py-4 px-6 rounded-full bg-brand-600 hover:bg-brand-700 active:scale-[0.98] text-white font-extrabold text-sm sm:text-base tracking-wide flex items-center justify-center gap-2 shadow-lg shadow-brand-600/30 transition-all">
-                                <svg class="w-5 h-5"><use href="/assets/icons/sprite.svg#icon-bag"></use></svg>
-                                <span>Order Now</span>
+                                    class="flex-1 py-3.5 sm:py-4 px-6 rounded-full bg-emerald-600 hover:bg-emerald-500 active:scale-[0.98] text-white font-black text-sm sm:text-base tracking-wide flex items-center justify-center gap-2 shadow-xl shadow-emerald-700/25 transition-all">
+                                <svg class="w-5 h-5 text-white"><use href="/assets/icons/sprite.svg#icon-bag"></use></svg>
+                                <span class="text-white">Order Now</span>
                             </button>
                             <button @click="addActiveToCart(false)" type="button" aria-label="Add to cart"
-                                    class="p-3.5 sm:p-4 rounded-full bg-slate-100 hover:bg-brand-50 text-slate-700 hover:text-brand-600 border border-slate-200 transition-colors shadow-sm" title="Add to Cart">
+                                    class="p-3.5 sm:p-4 rounded-full bg-slate-100 hover:bg-emerald-50 text-slate-800 hover:text-emerald-700 border border-slate-300 transition-colors shadow-sm" title="Add to Cart">
                                 <svg class="w-5 h-5"><use href="/assets/icons/sprite.svg#icon-cart"></use></svg>
                             </button>
                         </div>
@@ -148,9 +148,9 @@
                         </div>
 
                         <!-- Top green accent notch -->
-                        <div class="w-6 h-1 bg-brand-500 rounded-full mb-1"></div>
-                        <h4 class="text-[11px] sm:text-xs font-bold text-slate-800 leading-tight mb-1 line-clamp-2" x-text="nextProduct.name"></h4>
-                        <div class="text-brand-600 font-extrabold text-sm sm:text-base mb-2 sm:mb-3" x-text="'₹' + Math.round(nextProduct.price)"></div>
+                        <div class="w-6 h-1 bg-emerald-500 rounded-full mb-1"></div>
+                        <h4 class="text-[11px] sm:text-xs font-black text-slate-900 leading-tight mb-1 line-clamp-2" x-text="nextProduct.name"></h4>
+                        <div class="text-emerald-700 font-black text-sm sm:text-base mb-2 sm:mb-3" x-text="'₹' + Math.round(nextProduct.price)"></div>
 
                         <!-- Circular Quick Cart Button -->
                         <button @click.stop="addQuickProduct(nextProduct.id)" type="button" aria-label="Add to cart"
@@ -170,35 +170,35 @@
             <!-- 4 BENEFIT BADGES ROW (Matches Reference Design) -->
             <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-3xl mx-auto">
                 <!-- Badge 1: 100% Natural -->
-                <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-4 text-center shadow-md border border-white/60 flex flex-col items-center justify-center transition-transform hover:-translate-y-0.5">
-                    <div class="w-10 h-10 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center mb-2">
+                <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-4 text-center shadow-md border border-white/70 flex flex-col items-center justify-center transition-transform hover:-translate-y-0.5">
+                    <div class="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mb-2">
                         <svg class="w-5 h-5"><use href="/assets/icons/sprite.svg#icon-leaf"></use></svg>
                     </div>
-                    <span class="text-xs font-bold text-slate-800">100% Natural</span>
+                    <span class="text-xs font-black text-slate-900">100% Natural</span>
                 </div>
 
                 <!-- Badge 2: No Preservatives -->
-                <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-4 text-center shadow-md border border-white/60 flex flex-col items-center justify-center transition-transform hover:-translate-y-0.5">
+                <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-4 text-center shadow-md border border-white/70 flex flex-col items-center justify-center transition-transform hover:-translate-y-0.5">
                     <div class="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mb-2">
                         <svg class="w-5 h-5"><use href="/assets/icons/sprite.svg#icon-heart"></use></svg>
                     </div>
-                    <span class="text-xs font-bold text-slate-800">No Preservatives</span>
+                    <span class="text-xs font-black text-slate-900">No Preservatives</span>
                 </div>
 
                 <!-- Badge 3: Fresh Daily Coconuts -->
-                <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-4 text-center shadow-md border border-white/60 flex flex-col items-center justify-center transition-transform hover:-translate-y-0.5">
-                    <div class="w-10 h-10 rounded-full bg-teal-50 text-teal-600 flex items-center justify-center mb-2">
+                <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-4 text-center shadow-md border border-white/70 flex flex-col items-center justify-center transition-transform hover:-translate-y-0.5">
+                    <div class="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mb-2">
                         <svg class="w-5 h-5"><use href="/assets/icons/sprite.svg#icon-circle-check"></use></svg>
                     </div>
-                    <span class="text-xs font-bold text-slate-800">Fresh Daily Coconuts</span>
+                    <span class="text-xs font-black text-slate-900">Fresh Daily Coconuts</span>
                 </div>
 
                 <!-- Badge 4: Healthy & Refreshing -->
-                <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-4 text-center shadow-md border border-white/60 flex flex-col items-center justify-center transition-transform hover:-translate-y-0.5">
-                    <div class="w-10 h-10 rounded-full bg-lime-50 text-lime-600 flex items-center justify-center mb-2">
+                <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-4 text-center shadow-md border border-white/70 flex flex-col items-center justify-center transition-transform hover:-translate-y-0.5">
+                    <div class="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mb-2">
                         <svg class="w-5 h-5"><use href="/assets/icons/sprite.svg#icon-zap"></use></svg>
                     </div>
-                    <span class="text-xs font-bold text-slate-800">Healthy &amp; Refreshing</span>
+                    <span class="text-xs font-black text-slate-900">Healthy &amp; Refreshing</span>
                 </div>
             </div>
 

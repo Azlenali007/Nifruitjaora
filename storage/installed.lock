@@ -1,9 +1,1 @@
-{
-    "installed": true,
-    "installed_at": "2026-10-29 11:45:00",
-    "app_name": "N.A Fresh Fruits & Coconuts",
-    "app_url": "http://localhost:3000",
-    "admin_email": "admin@nafreshfruits.com",
-    "ip": "127.0.0.1",
-    "php_version": "8.2.29"
-}
+{"installed":true,"installed_at":"2026-10-29 12:07:38","admin_email":"admin@nafreshfruits.com"}

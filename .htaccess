@@ -1,0 +1,37 @@
+# ----------------------------------------------------------------------
+# N.A Fresh Fruits & Coconuts - Root Apache Configuration
+# ----------------------------------------------------------------------
+
+# Disable Directory Browsing
+Options -Indexes -MultiViews
+
+# Set default character set
+AddDefaultCharset UTF-8
+
+# Block access to hidden files and sensitive project directories
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Block hidden files and dotfiles (.git, .env, etc.)
+    RewriteRule (^\.|/\.) - [F,L]
+
+    # Block direct access to internal application directories
+    RewriteRule ^(app|config|database|resources|routes|storage|tests|vendor|scripts) - [F,L]
+
+    # Block direct access to sensitive configuration files
+    RewriteRule ^(composer\.(json|lock)|package\.json|phpunit\.xml|tailwind\.config\.js|postcss\.config\.js|\.env.*) - [F,L]
+
+    # Route public static assets if requesting directly
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -f
+    RewriteRule ^(.*)$ public/$1 [L]
+
+    # Route all other requests through front controller
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
+
+# Fallback for servers without mod_rewrite
+DirectoryIndex index.php public/index.php

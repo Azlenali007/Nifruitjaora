@@ -67,9 +67,10 @@ class Router {
         // Strip query string and base path
         $path = parse_url($uri, PHP_URL_PATH) ?? '/';
         $method = strtoupper($_POST['_method'] ?? $method);
+        $matchMethod = ($method === 'HEAD') ? 'GET' : $method;
 
         foreach ($this->routes as $route) {
-            if ($route['method'] === $method && preg_match($route['pattern'], $path, $matches)) {
+            if ($route['method'] === $matchMethod && preg_match($route['pattern'], $path, $matches)) {
                 // Extract named parameters
                 $params = array_filter($matches, 'is_string', ARRAY_FILTER_USE_KEY);
 

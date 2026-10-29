@@ -1,10 +1,19 @@
 <?php
 
+// Block direct access to hidden files and sensitive project resources
+$requestUri = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
+$decodedUri = urldecode((string)$requestUri);
+if (preg_match('#(?:/\.|\b(composer\.(json|lock)|package\.json|\.env|phpunit\.xml|tailwind\.config\.js|postcss\.config\.js|database/|config/|app/|storage/|resources/|routes/|tests/|vendor/|scripts/))\b#i', $decodedUri)) {
+    http_response_code(403);
+    header('Content-Type: text/plain; charset=utf-8');
+    echo "403 Forbidden - Access Denied";
+    exit;
+}
+
 // Check if running on PHP built-in server and file exists on disk
 if (php_sapi_name() === 'cli-server') {
-    $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-    $filePath = __DIR__ . $uri;
-    if ($uri !== '/' && file_exists($filePath) && !is_dir($filePath)) {
+    $filePath = __DIR__ . $requestUri;
+    if ($requestUri !== '/' && file_exists($filePath) && !is_dir($filePath)) {
         return false; // Let PHP built-in server serve the static file directly
     }
 }
