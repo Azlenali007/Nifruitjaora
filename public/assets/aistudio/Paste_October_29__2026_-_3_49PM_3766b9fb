@@ -1,0 +1,1052 @@
+PROJECT: N.A FRESH FRUITS & COCONUTS — COMPLETE PRODUCTION-READY E-COMMERCE WEBSITE
+
+1. YOUR ROLE AND OBJECTIVE
+
+Act as a senior PHP software architect, full-stack developer, database architect, UI/UX designer, and application security engineer.
+
+Build a complete, functional, production-oriented e-commerce website for my business:
+
+Business Name: N.A Fresh Fruits & Coconuts
+
+The business currently sells fresh coconuts and coconut water. Other product categories, such as juices and kulfi, may be introduced in the future, but they must NOT be included in the current customer-facing website.
+
+I have attached a reference image of the website design. Study this image carefully and recreate the design as closely as reasonably possible.
+
+This is a real website project, not a static design, UI mockup, prototype, or demonstration.
+
+The customer website, admin panel, database, product management, cart, checkout, Razorpay payments, order management, authentication, and all essential features must work correctly.
+
+Do not stop after generating a homepage or creating the folder structure. Implement the complete application, install the required dependencies, run the available tests, fix errors, and verify the finished project.
+
+2. STRICT TECHNOLOGY REQUIREMENTS
+
+Use ONLY the following primary stack:
+
+* Backend: Core PHP 8.2 or newer.
+* Database: MySQL 8+.
+* Database access: PDO with prepared statements.
+* Frontend styling: Tailwind CSS.
+* JavaScript: Vanilla JavaScript and Alpine.js.
+* Alerts and confirmations: SweetAlert2.
+* Charts: Chart.js.
+* Icons: Inline SVG or Lucide SVG icons.
+* Payments: Razorpay Checkout and server-side Razorpay API integration.
+* Routing: A lightweight custom PHP router.
+* Templates: Native PHP templates.
+* Testing: PHPUnit where compatible with the project setup.
+* Dependency management: Composer for PHP dependencies and npm only for frontend build tools and permitted JavaScript/CSS libraries.
+
+Absolute framework restrictions
+
+DO NOT use:
+
+* Laravel, Symfony, CodeIgniter, or any other PHP framework.
+* React, Next.js, Vue, Angular, Svelte, or any other frontend framework.
+* TypeScript.
+* Node.js as the application backend.
+* Bootstrap.
+* Twig or any other template engine.
+* Unnecessary UI frameworks or additional frontend frameworks.
+
+Alpine.js is permitted and required for lightweight UI interactions.
+
+Tailwind CSS must be the primary styling system.
+
+CRITICAL ZERO TYPESCRIPT FILE POLICY
+
+The entire project must contain ZERO files with the following extensions:
+
+* .ts
+* .tsx
+
+This rule applies to the entire project, including application source, generated code, frontend components, configuration, tests, and custom build scripts.
+
+Do not create TypeScript files and plan to remove them later. Avoid generating them in the first place.
+
+Use .php, .js, .css, .sql, .json, .html, .svg, .md, and other appropriate non-TypeScript formats.
+
+Dependencies and build tools must be selected and configured to avoid introducing TypeScript files into the project.
+
+After implementation:
+
+1. Recursively scan the entire project for .ts and .tsx files, excluding no directories from the final verification.
+2. If any prohibited file exists, investigate its origin and remove it safely or replace the dependency/build approach responsible for generating it.
+3. Repeat the complete scan.
+4. Report the exact final counts: .ts = 0, .tsx = 0.
+5. Do not claim completion until the final scan confirms both counts are zero.
+
+Also ensure that no prohibited framework has been introduced indirectly into the application’s frontend architecture.
+
+3. DESIGN REFERENCE — FOLLOW THE ATTACHED IMAGE
+
+The attached reference image is the primary visual specification.
+
+Reproduce its overall visual identity as closely as possible:
+
+* Premium green-and-white tropical aesthetic.
+* Modern, clean, high-quality e-commerce design.
+* Natural coconut imagery.
+* White surfaces, fresh green accents, and subtle shadows.
+* Rounded product cards and refined spacing.
+* Premium typography and readable product prices.
+* Smooth animated product carousel.
+* Mobile-first responsive layout.
+* Attractive shopping cart and checkout experience.
+
+The reference features a prominent coconut product in the center, with previous and next products visible on either side.
+
+Product carousel requirements
+
+Implement a genuine interactive carousel:
+
+* The active product is prominently displayed in the center.
+* The previous and next products remain partially visible on either side on larger screens.
+* Swipe left and right on touchscreens.
+* Support mouse dragging where practical.
+* Provide accessible previous/next controls.
+* Animate product transitions smoothly.
+* Update the product name, image, price, availability, and variant information when the active product changes.
+* Ensure the carousel works on mobile, tablet, and desktop.
+* Load carousel products dynamically from the database.
+* Let the administrator control which products appear and their display order.
+* Respect product visibility and stock status.
+
+Do not make the carousel a collection of hardcoded images. It must be connected to the actual product management system.
+
+Brand identity
+
+Use the business name:
+
+N.A Fresh Fruits & Coconuts
+
+The brand must be visible in the website header, with an attractive logo or text-based logo if no official logo is provided.
+
+Do not invent additional product categories or show unrelated products in the current store.
+
+Do not replace the design with a generic e-commerce template.
+
+4. CUSTOMER-FACING WEBSITE
+
+Implement the following complete customer experience.
+
+A. Homepage
+
+* Premium header with brand name/logo.
+* Responsive navigation.
+* Product search.
+* Shopping cart icon with live item count.
+* Login/account navigation.
+* Main coconut product carousel.
+* Featured coconut products.
+* Product cards with photographs, names, prices, and availability.
+* Relevant natural-product messaging.
+* Benefits section.
+* Footer with contact information, policies, and navigation links.
+* Loading, empty, and error states where necessary.
+
+All product information and relevant homepage content must come from the database or editable settings.
+
+B. Product catalogue
+
+Create a page showing all active products.
+
+Features:
+
+* Product search.
+* Sorting by price and name.
+* Product availability.
+* Product photographs.
+* Price display.
+* Product details links.
+* Pagination if the catalogue grows.
+* Proper empty states.
+
+Only active products should be visible to customers.
+
+C. Product details
+
+Show:
+
+* Product images.
+* Product name and description.
+* Price.
+* Available sizes or variants, where applicable.
+* Stock availability.
+* Quantity selector.
+* Add to Cart.
+* Order Now.
+* Related coconut products, if configured.
+
+The administrator must be able to manage products without editing code.
+
+D. Shopping cart
+
+Implement a database-backed cart for logged-in customers and a safe session-based cart for guests, with a reliable merge strategy when a guest signs in.
+
+Features:
+
+* Add items.
+* Change quantities.
+* Remove items.
+* Clear cart.
+* Update item count.
+* Calculate subtotal and applicable delivery charges.
+* Validate current prices and stock on the server.
+* Prevent invalid quantities and unavailable items.
+* Preserve the cart appropriately across navigation.
+
+Never trust prices or totals submitted by the browser.
+
+E. Guest checkout and customer accounts
+
+Customers must be able to place orders without creating an account.
+
+Support optional customer registration and login.
+
+Collect the information necessary to fulfil a local delivery order:
+
+* Customer name.
+* Mobile number.
+* Full delivery address.
+* PIN code.
+* Optional email address.
+* Delivery instructions, if applicable.
+
+Include:
+
+* Registration.
+* Login and logout.
+* Secure password hashing.
+* Forgot-password workflow with securely generated reset tokens.
+* Customer profile.
+* Saved addresses for registered users.
+* Order history for registered customers.
+* Guest order confirmation and secure order lookup.
+
+Do not expose one customer’s orders or personal details to another customer.
+
+F. Checkout
+
+Implement a complete checkout workflow:
+
+1. Validate the cart.
+2. Validate customer and address information.
+3. Recalculate prices and totals on the server.
+4. Check product availability and stock.
+5. Apply any eligible coupon.
+6. Calculate delivery charges using configured rules.
+7. Show the final order summary.
+8. Allow payment only through Razorpay when enabled.
+9. Create the local order and payment records safely.
+10. Verify payment through the server.
+11. Display an appropriate order confirmation.
+
+The checkout must be protected against duplicate submissions and duplicate orders.
+
+If the payment gateway is disabled, do not allow customers to place paid orders. Display a clear message that online payment is temporarily unavailable.
+
+G. Razorpay payment integration
+
+Razorpay is the ONLY payment gateway for this project.
+
+Do not implement Cash on Delivery or manual cash payment.
+
+Implement:
+
+* Server-side Razorpay order creation.
+* Integration with Razorpay Checkout.
+* Secure storage of API credentials in environment variables or protected configuration.
+* Test and live mode support.
+* Server-side signature verification.
+* Verified webhook processing.
+* Payment status tracking.
+* Handling of successful, failed, cancelled, pending, and delayed payment responses.
+* Idempotent payment processing.
+* Duplicate webhook protection.
+* Reconciliation between local orders and Razorpay transactions.
+* Payment logs without exposing secret keys or sensitive information.
+* Refund initiation and status tracking where supported and authorized.
+
+Never trust a browser redirect or JavaScript success callback as proof of payment.
+
+Never mark an order as paid until the payment has been verified by the server through the appropriate Razorpay verification process.
+
+Webhook events must be authenticated, deduplicated, and handled safely.
+
+Use official Razorpay APIs and documentation for the actual integration. Do not fabricate successful responses or simulate payments in production mode.
+
+H. Orders and customer tracking
+
+Each order must have a unique, non-guessable public order reference.
+
+Customers should be able to view:
+
+* Order reference.
+* Purchased products and quantities.
+* Price breakdown.
+* Delivery address.
+* Payment status.
+* Order status.
+* Order date.
+* Relevant status updates.
+
+Support appropriate statuses such as:
+
+* Pending Payment.
+* Payment Failed.
+* Paid.
+* Confirmed.
+* Preparing.
+* Out for Delivery.
+* Delivered.
+* Cancelled.
+* Refund Pending.
+* Refunded.
+
+Keep payment status and fulfilment status as separate concepts.
+
+Do not allow customers to mark their own orders as paid or delivered.
+
+I. Future product expansion
+
+The initial public store must focus exclusively on coconuts and coconut water.
+
+However, build the product database and management interface so that additional product categories can be introduced later without rebuilding the application.
+
+Do not display future categories until an administrator creates and activates them.
+
+5. COMPLETE ADMIN PANEL
+
+Build a separate, fully functional and securely protected administration interface.
+
+Use a professional dashboard design with a green-and-white visual identity consistent with the store.
+
+All administration pages must use real database records.
+
+A. Admin authentication and authorization
+
+Implement:
+
+* Separate admin login.
+* Secure password hashing.
+* Session regeneration after login.
+* Logout.
+* Login rate limiting.
+* CSRF protection.
+* Role-based permissions.
+* Secure password changes.
+* Password reset where appropriately configured.
+* Protection against unauthorized access to admin routes.
+* Activity logging for sensitive actions.
+
+Create an initial administrator through a secure setup or CLI command. Do not hardcode production credentials or expose a default administrator password publicly.
+
+B. Dashboard
+
+Display:
+
+* Today’s orders.
+* Today’s sales.
+* Total paid revenue.
+* Pending orders.
+* Orders awaiting payment.
+* Cancelled orders.
+* Refund totals.
+* Best-selling products.
+* Recent orders.
+* Sales charts.
+* Order trends over configurable date ranges.
+
+Use Chart.js and real database data.
+
+Ensure that revenue reports distinguish paid, refunded, pending, and failed transactions correctly.
+
+C. Product management
+
+Administrators must be able to:
+
+* Create products.
+* Edit products.
+* Archive or delete products safely.
+* Upload and manage product images.
+* Set product names and descriptions.
+* Set regular prices and optional sale prices.
+* Configure variants such as Small, Medium, and Large.
+* Set variant-specific prices and stock.
+* Set SKUs if needed.
+* Control stock and availability.
+* Mark products as featured.
+* Enable or disable products.
+* Configure product display order.
+* Preview how products appear on the homepage.
+
+Support both independent products and products with multiple variants.
+
+Prevent invalid prices, negative stock, unsafe file uploads, and unauthorized changes.
+
+Preserve order history when a product is archived or discontinued.
+
+D. Category management
+
+Provide functionality to:
+
+* Add categories.
+* Edit categories.
+* Activate or deactivate categories.
+* Change category order.
+* Assign products to categories.
+
+Keep the current customer-facing store limited to active coconut-related categories and products.
+
+E. Order management
+
+Administrators must be able to:
+
+* View all orders.
+* Search by order reference or customer details.
+* Filter by date, payment status, and order status.
+* Open complete order details.
+* View ordered items and price breakdowns.
+* View delivery addresses and customer contact details.
+* Update fulfilment status according to valid transitions.
+* Add internal notes.
+* View payment transaction references.
+* Cancel eligible orders.
+* Manage eligible refunds through supported Razorpay operations.
+* View a chronological order activity history.
+
+Log sensitive administrative changes.
+
+Do not allow arbitrary status changes that bypass payment verification or refund rules.
+
+F. Razorpay settings
+
+Create a dedicated payment settings page.
+
+Provide:
+
+* Gateway ON/OFF toggle.
+* Test mode and live mode.
+* Configurable Razorpay Key ID.
+* Secure Secret Key configuration.
+* Webhook configuration guidance.
+* Connection/configuration validation where supported.
+* Recent payment activity.
+* Payment failure information.
+* Refund tracking.
+
+The administrator must be able to disable or enable Razorpay without editing code.
+
+When the gateway is disabled, the checkout must enforce that state on the server, not merely hide the payment button.
+
+Never expose the Razorpay Secret Key in HTML, JavaScript, API responses, browser storage, or logs.
+
+Do not store secrets in ordinary plaintext database fields unless an appropriate encryption and access-control design is implemented.
+
+G. Customer management
+
+Provide:
+
+* Customer list.
+* Search and filters.
+* Customer profiles.
+* Customer order history.
+* Guest order records.
+* Account status management.
+* Appropriate protection for personal information.
+
+Do not expose sensitive information unnecessarily.
+
+H. Homepage and carousel management
+
+Allow the administrator to manage:
+
+* Featured products.
+* Carousel products.
+* Carousel display order.
+* Homepage promotional banners.
+* Hero heading and text.
+* Featured product sections.
+* Shop logo and branding.
+* Contact information.
+* Footer content.
+
+All settings must update the public website without requiring source-code changes.
+
+I. Delivery settings
+
+The delivery service will initially be managed manually by the business owner.
+
+Do not implement Rapido API integration at this stage.
+
+Provide configurable:
+
+* Delivery charges.
+* Minimum order amount.
+* Serviceable PIN codes or delivery areas.
+* Free-delivery threshold, if enabled.
+* Estimated delivery messaging.
+* Shop pickup setting, if enabled.
+
+Only allow checkout for serviceable addresses when delivery restrictions are configured.
+
+J. Coupons and discounts
+
+Implement:
+
+* Coupon creation.
+* Percentage or fixed discounts.
+* Start and expiry dates.
+* Minimum order requirements.
+* Maximum discount limits.
+* Usage limits.
+* Per-customer limits.
+* Active/inactive status.
+
+All coupon eligibility and discount calculations must be validated server-side.
+
+K. Reports
+
+Provide reports for:
+
+* Sales by date.
+* Orders by status.
+* Payment success and failure.
+* Refunds.
+* Product sales.
+* Best-selling products.
+* Customer order history.
+* CSV export where appropriate.
+
+Reports must be calculated from actual database records and must not count failed or unpaid transactions as paid revenue.
+
+L. Admin users, permissions, and logs
+
+Implement:
+
+* Administrator accounts.
+* Role-based access permissions.
+* Restricted access to payment configuration.
+* Restricted access to administrator management.
+* Activity logs.
+* Authentication event logs.
+* Configuration change logs.
+
+Protect activity logs against unauthorized modification.
+
+M. General settings
+
+Allow the administrator to configure:
+
+* Store name.
+* Logo.
+* Contact details.
+* Currency: INR.
+* Timezone: Asia/Kolkata.
+* Store availability.
+* Minimum order amount.
+* Delivery configuration.
+* Relevant policy pages.
+* Order notification preferences.
+
+Use Asia/Kolkata for customer-facing dates and times.
+
+6. REQUIRED FILE AND FOLDER STRUCTURE
+
+Create and implement the following organized structure.
+
+na-fresh-fruits/
+│
+├── app/
+│   ├── Controllers/
+│   │   ├── HomeController.php
+│   │   ├── ProductController.php
+│   │   ├── CartController.php
+│   │   ├── CheckoutController.php
+│   │   ├── PaymentController.php
+│   │   ├── OrderController.php
+│   │   ├── AuthController.php
+│   │   ├── ProfileController.php
+│   │   └── AddressController.php
+│   │
+│   ├── Admin/
+│   │   ├── Controllers/
+│   │   │   ├── DashboardController.php
+│   │   │   ├── ProductController.php
+│   │   │   ├── CategoryController.php
+│   │   │   ├── OrderController.php
+│   │   │   ├── CustomerController.php
+│   │   │   ├── PaymentController.php
+│   │   │   ├── CouponController.php
+│   │   │   ├── ReportController.php
+│   │   │   ├── HomepageController.php
+│   │   │   ├── DeliveryController.php
+│   │   │   ├── SettingsController.php
+│   │   │   ├── AdminUserController.php
+│   │   │   └── ActivityLogController.php
+│   │   └── Middleware/
+│   │       ├── AdminAuth.php
+│   │       └── PermissionMiddleware.php
+│   │
+│   ├── Models/
+│   │   ├── User.php
+│   │   ├── Product.php
+│   │   ├── ProductVariant.php
+│   │   ├── Category.php
+│   │   ├── Cart.php
+│   │   ├── Order.php
+│   │   ├── OrderItem.php
+│   │   ├── Payment.php
+│   │   ├── Address.php
+│   │   ├── Coupon.php
+│   │   └── Setting.php
+│   │
+│   ├── Services/
+│   │   ├── RazorpayService.php
+│   │   ├── OrderService.php
+│   │   ├── CartService.php
+│   │   ├── InventoryService.php
+│   │   ├── CouponService.php
+│   │   ├── ImageUploadService.php
+│   │   └── NotificationService.php
+│   │
+│   ├── Middleware/
+│   │   ├── AuthMiddleware.php
+│   │   ├── CsrfMiddleware.php
+│   │   └── RateLimitMiddleware.php
+│   │
+│   ├── Helpers/
+│   │   ├── functions.php
+│   │   ├── validation.php
+│   │   └── response.php
+│   │
+│   └── Views/
+│       ├── layouts/
+│       │   ├── main.php
+│       │   └── auth.php
+│       ├── home/
+│       │   └── index.php
+│       ├── products/
+│       │   ├── index.php
+│       │   └── show.php
+│       ├── cart/
+│       │   └── index.php
+│       ├── checkout/
+│       │   ├── index.php
+│       │   └── confirmation.php
+│       ├── auth/
+│       │   ├── login.php
+│       │   ├── register.php
+│       │   └── forgot-password.php
+│       ├── orders/
+│       │   ├── index.php
+│       │   └── show.php
+│       ├── profile/
+│       │   └── index.php
+│       ├── addresses/
+│       │   └── index.php
+│       └── errors/
+│           ├── 403.php
+│           ├── 404.php
+│           └── 500.php
+│
+├── app/Admin/Views/
+│   ├── layouts/
+│   │   └── main.php
+│   ├── auth/
+│   │   └── login.php
+│   ├── dashboard/
+│   │   └── index.php
+│   ├── products/
+│   │   ├── index.php
+│   │   ├── create.php
+│   │   ├── edit.php
+│   │   └── show.php
+│   ├── categories/
+│   │   ├── index.php
+│   │   └── form.php
+│   ├── orders/
+│   │   ├── index.php
+│   │   └── show.php
+│   ├── customers/
+│   │   ├── index.php
+│   │   └── show.php
+│   ├── payments/
+│   │   └── index.php
+│   ├── coupons/
+│   │   ├── index.php
+│   │   └── form.php
+│   ├── reports/
+│   │   └── index.php
+│   ├── homepage/
+│   │   └── index.php
+│   ├── delivery/
+│   │   └── index.php
+│   ├── settings/
+│   │   └── index.php
+│   ├── admin-users/
+│   │   └── index.php
+│   └── activity-logs/
+│       └── index.php
+│
+├── config/
+│   ├── app.php
+│   ├── database.php
+│   ├── razorpay.php
+│   └── security.php
+│
+├── database/
+│   ├── migrations/
+│   │   ├── 001_create_users.php
+│   │   ├── 002_create_categories.php
+│   │   ├── 003_create_products.php
+│   │   ├── 004_create_product_variants.php
+│   │   ├── 005_create_addresses.php
+│   │   ├── 006_create_carts.php
+│   │   ├── 007_create_orders.php
+│   │   ├── 008_create_order_items.php
+│   │   ├── 009_create_payments.php
+│   │   ├── 010_create_coupons.php
+│   │   ├── 011_create_settings.php
+│   │   ├── 012_create_admin_users.php
+│   │   ├── 013_create_activity_logs.php
+│   │   └── 014_create_permissions.php
+│   ├── seeds/
+│   │   ├── AdminSeeder.php
+│   │   └── SettingsSeeder.php
+│   └── schema.sql
+│
+├── routes/
+│   ├── web.php
+│   ├── admin.php
+│   └── api.php
+│
+├── public/
+│   ├── index.php
+│   ├── .htaccess
+│   ├── robots.txt
+│   ├── assets/
+│   │   ├── css/
+│   │   │   └── app.css
+│   │   ├── js/
+│   │   │   ├── app.js
+│   │   │   ├── carousel.js
+│   │   │   ├── cart.js
+│   │   │   ├── checkout.js
+│   │   │   ├── admin.js
+│   │   │   └── notifications.js
+│   │   ├── images/
+│   │   │   ├── logo.svg
+│   │   │   ├── hero-coconut.webp
+│   │   │   └── placeholders/
+│   │   └── icons/
+│   │       └── sprite.svg
+│   └── uploads/
+│       └── .gitkeep
+│
+├── resources/
+│   ├── css/
+│   │   └── input.css
+│   └── js/
+│       └── admin-charts.js
+│
+├── storage/
+│   ├── logs/
+│   │   └── .gitkeep
+│   ├── cache/
+│   │   └── .gitkeep
+│   └── sessions/
+│       └── .gitkeep
+│
+├── scripts/
+│   ├── migrate.php
+│   ├── seed.php
+│   └── verify-project.php
+│
+├── tests/
+│   ├── AuthTest.php
+│   ├── ProductTest.php
+│   ├── CartTest.php
+│   ├── CheckoutTest.php
+│   ├── RazorpayTest.php
+│   ├── AdminTest.php
+│   └── OrderTest.php
+│
+├── vendor/
+├── .env.example
+├── .gitignore
+├── composer.json
+├── package.json
+├── tailwind.config.js
+├── postcss.config.js
+├── phpunit.xml
+└── README.md
+
+You may add additional files or directories if necessary, but preserve the architecture, naming conventions, and technology restrictions above.
+
+Do not create empty placeholder files just to make the structure appear complete. Every required file must contain meaningful, functional implementation code, or be a clearly justified generated/runtime directory.
+
+The project must have a real application bootstrap, dependency autoloading, router, middleware pipeline, controller dispatch, view rendering, database connection management, error handling, and URL generation.
+
+Use appropriate database migrations or an equivalent reliable schema installation process.
+
+The vendor/ directory must be generated through Composer installation; do not fabricate dependency files.
+
+7. DATABASE DESIGN
+
+Design a relational MySQL database with appropriate indexes, foreign keys, unique constraints, and transactions.
+
+Include tables for:
+
+* Users.
+* Admin users.
+* Roles and permissions.
+* Categories.
+* Products.
+* Product variants.
+* Product images, if separate image records are used.
+* Customer addresses.
+* Carts and cart items, if database-backed carts are implemented.
+* Orders.
+* Order items.
+* Payments.
+* Payment webhook events or idempotency records.
+* Coupons.
+* Coupon usage.
+* Store settings.
+* Delivery rules or serviceable areas.
+* Activity logs.
+* Password reset tokens.
+* Notifications, if persisted.
+
+Use appropriate monetary precision, such as integer paise or carefully handled DECIMAL values. Never use floating-point arithmetic for financial calculations.
+
+Snapshot product names, variants, quantities, unit prices, discounts, and other relevant information into order items so historical orders remain accurate when products change.
+
+Keep payment status, order status, and refund status logically separate.
+
+Use database transactions for order creation, stock updates, and related operations.
+
+Prevent overselling and race conditions with appropriate transactional locking or atomic stock updates.
+
+Include a complete schema installation and migration workflow.
+
+8. SECURITY REQUIREMENTS
+
+Implement security throughout the application:
+
+* PDO prepared statements.
+* Context-aware output escaping.
+* CSRF tokens for state-changing requests.
+* Secure, HttpOnly, SameSite session cookies.
+* Session ID regeneration after authentication.
+* Password hashing with PHP password_hash and verification with password_verify.
+* Login and password-reset rate limiting.
+* Authorization checks on every protected admin action.
+* Server-side validation of every form and API request.
+* Secure image upload validation, MIME checking, size limits, randomized filenames, and safe image handling.
+* Protection against SQL injection, XSS, CSRF, IDOR, session fixation, and privilege escalation.
+* Secure error handling without exposing stack traces or secrets to users.
+* Safe handling of environment variables and production configuration.
+* Appropriate security headers.
+* Restricted access to storage, configuration, migration files, and application source.
+* No secrets committed to source control.
+* No publicly accessible database administration tools.
+* No direct execution of uploaded files.
+* Safe order-reference generation.
+* Payment idempotency and verified webhook processing.
+
+The web server’s document root must be the public/ directory.
+
+Application source, configuration, logs, sessions, and other private files must not be directly accessible through HTTP.
+
+Provide a production deployment checklist and explain how to configure the web server safely.
+
+9. FRONTEND BUILD REQUIREMENTS
+
+Use Tailwind CSS for the visual system.
+
+Use Alpine.js for lightweight interactivity, including:
+
+* Carousel state and interactions.
+* Mobile navigation.
+* Dropdown menus.
+* Modals.
+* Quantity selectors.
+* Cart interactions where appropriate.
+* Admin sidebar.
+* Admin filters and tabs.
+* Confirmation dialogs.
+
+Use SweetAlert2 for appropriate success, error, warning, and confirmation dialogs.
+
+Use Chart.js for administrative reports.
+
+Use SVG icons rather than emoji as primary interface icons.
+
+Compile Tailwind assets into the public CSS directory using the permitted build tools. Do not rely on a development server in production.
+
+Avoid unnecessarily loading JavaScript or CSS on pages that do not need it.
+
+Ensure that all essential controls work with keyboard navigation and touch interaction.
+
+The public website and admin panel must be responsive and usable on modern mobile browsers, including iOS Safari, as well as desktop browsers.
+
+Provide loading states, disabled states, validation feedback, empty states, and error messages.
+
+Do not use placeholder buttons that do nothing.
+
+Do not leave links pointing to missing pages.
+
+10. PROJECT INITIALIZATION AND EXECUTION
+
+The project must be built in the actual active workspace, not merely described in a response.
+
+Before coding:
+
+1. Inspect the current workspace.
+2. Check the installed PHP version and available extensions.
+3. Check Composer, Node.js/npm availability for the permitted asset build process, and MySQL access.
+4. Inspect the attached reference image.
+5. Confirm that the project can be implemented using the requested technology stack.
+6. Create a clear implementation plan and track completed features.
+
+Then:
+
+1. Create the project structure.
+2. Set up Composer autoloading and the application bootstrap.
+3. Install only the necessary compatible dependencies.
+4. Configure the database connection and migrations.
+5. Implement routing and middleware.
+6. Build the customer-facing pages.
+7. Implement the complete admin panel.
+8. Implement Razorpay test-mode integration and secure payment verification.
+9. Build frontend assets.
+10. Create setup and installation instructions.
+11. Run tests and fix discovered issues.
+12. Verify all required functionality.
+13. Run the final prohibited-extension scan.
+
+Do not ask me to manually create every folder or file.
+
+Use the available workspace and tools to perform the implementation directly.
+
+If a required service, credential, or environment dependency is unavailable, implement the correct integration structure, document the missing configuration, and continue with everything that can be completed safely.
+
+Do not pretend that a real payment has been processed when credentials or gateway access are unavailable.
+
+11. TESTING AND ACCEPTANCE CRITERIA
+
+The project is not complete until the following can be verified.
+
+Customer website
+
+* Homepage loads without errors.
+* Reference-inspired layout is responsive.
+* Carousel changes products correctly.
+* Products are loaded from the database.
+* Product detail pages work.
+* Search and sorting work.
+* Cart additions, quantity changes, and removals work.
+* Guest checkout works.
+* Customer registration and login work.
+* Address validation works.
+* Server-side price calculations work.
+* Out-of-stock items cannot be ordered.
+* Razorpay checkout can be initiated in test mode when configured.
+* Payment signatures are verified server-side.
+* Invalid payment signatures are rejected.
+* Duplicate payment processing is prevented.
+* Successful verified payments update the appropriate order and payment records.
+* Failed and cancelled payments are handled correctly.
+* Customers can access only their own protected account information.
+* Order confirmation and order history work.
+
+Admin panel
+
+* Admin login works.
+* Unauthorized visitors cannot access protected admin routes.
+* Dashboard metrics are based on actual database data.
+* Product creation, editing, stock management, and deactivation work.
+* Product changes appear on the customer website.
+* Carousel configuration works.
+* Order filtering and status management work.
+* Payment logs are displayed correctly.
+* Razorpay ON/OFF setting is enforced server-side.
+* Test/live mode settings are handled safely.
+* Customer management works.
+* Coupons and delivery settings work.
+* Reports and charts display real data.
+* Permissions are enforced.
+* Activity logs record important administrative actions.
+
+Code quality and project structure
+
+* No unresolved PHP syntax errors.
+* No broken internal routes.
+* No missing required application files.
+* No database schema mismatches.
+* No hardcoded fake business metrics.
+* No exposed secrets.
+* No prohibited framework usage.
+* Zero .ts files.
+* Zero .tsx files.
+
+Run automated tests where possible and perform smoke tests against a configured local database.
+
+For payment tests, use Razorpay’s test environment and test credentials only. Do not claim live-payment verification without the required credentials and actual test results.
+
+If a test cannot run because of a missing external dependency, clearly report that limitation instead of marking the test as passed.
+
+12. REQUIRED DOCUMENTATION
+
+Create a comprehensive README.md covering:
+
+* System requirements.
+* Installation.
+* Composer dependencies.
+* Frontend dependency installation.
+* Tailwind asset compilation.
+* Environment configuration.
+* MySQL database creation.
+* Migration and seed commands.
+* Secure administrator creation.
+* Local development server.
+* Production web server configuration.
+* Razorpay test-mode setup.
+* Live-mode activation checklist.
+* Webhook configuration.
+* File permissions.
+* Backup and restore.
+* Troubleshooting.
+* Automated tests.
+* Final .ts and .tsx verification.
+
+Provide an .env.example containing variable names and safe placeholders only. Never include real secrets.
+
+13. FINAL IMPLEMENTATION REPORT
+
+After the project has actually been implemented and verified, provide:
+
+1. A summary of what was built.
+2. The final file/folder structure.
+3. Installation and run instructions.
+4. Database setup instructions.
+5. Admin login URL and secure administrator creation procedure.
+6. Razorpay configuration steps.
+7. Test results, identifying any tests that could not run.
+8. Any remaining environment-dependent work.
+9. The exact .ts file count.
+10. The exact .tsx file count.
+
+Do not fabricate credentials or claim that the site is publicly deployed.
+
+Do not stop at a plan, report, or generated homepage. Continue implementation until the full achievable scope is complete.
+
+FINAL INSTRUCTION
+
+Start by inspecting the attached reference image and the active workspace.
+
+Then build the actual working application using the required PHP, MySQL, Tailwind CSS, Alpine.js, SweetAlert2, Chart.js, and Razorpay stack.
+
+Follow the attached design as closely as reasonably possible, build both customer and admin sides, and enforce the absolute requirement of zero .ts and zero .tsx files throughout the project.

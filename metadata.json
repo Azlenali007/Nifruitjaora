@@ -1,0 +1,6 @@
+{
+  "name": "N.A Fresh Fruits & Coconuts",
+  "description": "Premium e-commerce store for fresh tender coconuts, coconut water, and coconut malai with online ordering, Razorpay payments, and admin management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
